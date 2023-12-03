@@ -4,26 +4,22 @@
 
 #include "Airport.h"
 
-Airport::Airport() {
-    _airportName = "default";
-    _airportCode = "default";
-    _totalMinDelayed = "default";
-    _totalNumFlights = "default";
-}
+Airport::Airport() = default;
 
-Airport::Airport(string airportName, string airportCode, string tototalMinDelayed, string totalNumFlights) {
-    _airportName = airportName;
+Airport::Airport(string airportCode, string airportName, string numLateFlights, string numSecurityDelays,
+                 string numWeatherDelays, string numFlightsCancelled, string numDelayedFlights, string numFlightsTotaled,
+                 string numMinutesDelayed){
     _airportCode = airportCode;
-    _totalMinDelayed = tototalMinDelayed;
-    _totalNumFlights = totalNumFlights;
+    _airportName = airportName;
+    _numLateFlights = numLateFlights;
+    _numSecurityDelays = numSecurityDelays;
+    _numWeatherDelays = numWeatherDelays;
+    _numFlightsCancelled = numFlightsCancelled;
+    _numDelayedFlights = numDelayedFlights;
+    _numFlightsTotaled = numFlightsTotaled;
+    _numMinutesDelayed = numMinutesDelayed;
 }
 
-string Airport::printAirportInfo() {
-    cout << "Airport Code: " << _airportCode << endl
-         << "Airport Name: " << _airportName << endl
-         << "Total Minutes Delayed: " << _totalMinDelayed << endl
-         << "Total Number of Flights: " << _totalNumFlights << endl;
-}
 
 
 

@@ -1,21 +1,18 @@
 #ifndef SMOOTHSKIES_AIRPORT_H
 #define SMOOTHSKIES_AIRPORT_H
-
-
-
-
-//fix later
 #include <iostream>
 using namespace std;
 
 class Airport {
 
-    string _airportName, _airportCode, _totalMinDelayed, _totalNumFlights;
+    string _airportCode, _airportName, _numLateFlights, _numSecurityDelays, _numWeatherDelays, _numFlightsCancelled;
+    string _numDelayedFlights, _numFlightsTotaled, _numMinutesDelayed;
 
 public:
     Airport();
-    Airport(string airportName, string airportCode, string tototalMinDelayed, string totalNumFlights);
-    string printAirportInfo();
+    Airport(string airportCode, string airportName, string numLateFlights, string numSecurityDelays,
+            string numWeatherDelays, string numFlightsCancelled, string numDelayedFlights, string numFlightsTotaled,
+            string numMinutesDelayed);
 };
 
 
