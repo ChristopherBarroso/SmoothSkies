@@ -7,8 +7,15 @@ class QuickSort {
 
     Airport airports[4408];
 
+    void quickSort(Airport array[], int low, int high);
+    int partition(Airport array[], int low, int high);
+
+
 public:
     QuickSort();
+    void readInData();
+    void callQuickSort();
+
 };
 
 

@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
+#include "QuickSort.h"
 
 int main() {
-
-    //Read and store data
 
     //Start menu
     cout << "Hello and welcome to Smooth Skies, an interactive program that aims to inform "
@@ -39,6 +38,14 @@ int main() {
                 cout << "Invalid option. Please try again." << endl;
         }
 
+        if(quickSort){
+            QuickSort quick;
+            quick.readInData();
+        }
+        else if (mergeSort){
+
+        }
+
         cout << "Which attributes do you want to sort?\n"
                 "1. Number of Late Flights\n"
                 "2. Number of Security Delays\n"
@@ -47,12 +54,6 @@ int main() {
                 "5. Number of Delayed Flights\n"
                 "6. Number of Flights Totaled\n"
                 "7. Number of Minutes Delayed\n";
-        if(quickSort){
-
-        }
-        else if (mergeSort){
-
-        }
 
     }
     return 0;
