@@ -37,34 +37,183 @@ void QuickSort::readInData() {
     }
 }
 
-//Should work regardless of what type of data we are using from airport object
-//Citation:
-void QuickSort::quickSort(int low, int high) {
+//To avoid repeat code, quickSort will choose a certain partition based on desired value
+void QuickSort::quickSort(int low, int high, string& dataType) {
+    int pivot;
     if (low < high){
-        int pivot = partition(low, high);
-        quickSort(low, pivot - 1);
-        quickSort(pivot + 1, high);
+
+        if(dataType == "Late"){pivot = partitionLateFlights(low, high);}
+        else if(dataType == "Security"){pivot = partitionSecurityDelays(low, high);}
+        else if(dataType == "Weather"){pivot = partitionWeatherDelays(low,high);}
+        else if(dataType == "Cancelled"){pivot = partitionFlightsCancelled(low,high);}
+        else if(dataType == "Delayed"){pivot = partitionDelayedFlights(low,high);}
+        else if(dataType == "Total"){pivot = partitionFlightstotal(low,high);}
+        else{pivot = partitionMinutesDelayed(low,high);}
+
+        quickSort(low, pivot - 1, dataType);
+        quickSort(pivot + 1, high, dataType);
     }
 }
 
-int QuickSort::partition(int low, int high) {
-    int pivot = airports[low]; // change to access different variables
+int QuickSort::partitionLateFlights(int low, int high) {
+    int pivot = airports[low].getNumLate(); // change to access different variables
     int up = low, down = high;
 
-    while (up < down){
-        for(int j = up; j < high; j++){
-            if(airports[up] > pivot) //change this too
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumLate() > pivot) //change this too
                 break;
             up++;
         }
-        for(int j = high; j > low; j--){
-            if(airports[down] < pivot)
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumLate() < pivot)
                 break;
             down--;
         }
-        if(up < down){
+        if (up < down)
             std::swap(airports[low], airports[down]);
-        }
-        std::swap(airports[low], airports[high]);
+
     }
+    std::swap(airports[low], airports[high]);
+    return down;
 }
+
+int QuickSort::partitionSecurityDelays(int low, int high) {
+    int pivot = airports[low].getSecurityDelays(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getSecurityDelays() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getSecurityDelays() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+int QuickSort::partitionWeatherDelays(int low, int high) {
+    int pivot = airports[low].getNumWeatherDelays(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumWeatherDelays() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumWeatherDelays() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+int QuickSort::partitionFlightsCancelled(int low, int high) {
+    int pivot = airports[low].getNumFlightsCancelled(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumFlightsCancelled() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumFlightsCancelled() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+int QuickSort::partitionDelayedFlights(int low, int high) {
+    int pivot = airports[low].getNumDelayedFlights(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumDelayedFlights() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumDelayedFlights() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+int QuickSort::partitionFlightstotal(int low, int high) {
+    int pivot = airports[low].getNumFlightsTotaled(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumFlightsTotaled() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumFlightsTotaled() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+int QuickSort::partitionMinutesDelayed(int low, int high) {
+    int pivot = airports[low].getNumMinutesDelayed(); // change to access different variables
+    int up = low, down = high;
+
+    while (up < down) {
+        for (int j = up; j < high; j++) {
+            if (airports[up].getNumMinutesDelayed() > pivot) //change this too
+                break;
+            up++;
+        }
+        for (int j = high; j > low; j--) {
+            if (airports[down].getNumMinutesDelayed() < pivot)
+                break;
+            down--;
+        }
+        if (up < down)
+            std::swap(airports[low], airports[down]);
+    }
+    std::swap(airports[low], airports[high]);
+    return down;
+}
+
+void QuickSort::callQuickSort(string& desiredValue) {
+    int n = (sizeof(airports) / (sizeof(this->airports[0].getNumMinutesDelayed())));
+    quickSort(0, n-1, desiredValue);
+}
+
+
+
