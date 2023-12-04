@@ -1,7 +1,7 @@
 #include "MergeSort.h"
 
 //MergeSort::MergeSort() = defualt; 
-//this is no longer up to date
+
 void MergeSort::readInData(){
     string token;
     ifstream AirportFile("Proj3_Airlines.csv");

@@ -1,7 +1,7 @@
 #ifndef SMOOTHSKIES_MERGESORT_H
 #define SMOOTHSKIES_MERGESORT_H
 #include "Airport.h"
-//this is no longer up to date
+
 class MergeSort {
     Airport airports[4408]; 
     Airport temp[4408]; 
