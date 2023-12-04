@@ -48,14 +48,6 @@ void Airport::setNumMinutesDelayed(int num) {
     _numMinutesDelayed = num;
 }
 
-int Airport::getCode() const {
-    return _airportCode;
-}
-
-string Airport::getName() {
-    return _airportName;
-}
-
 int Airport::getNumLate() const {
     return _numLateFlights;
 }
@@ -82,6 +74,14 @@ int Airport::getNumFlightsTotaled() const {
 
 int Airport::getNumMinutesDelayed() const {
     return _numMinutesDelayed;
+}
+
+string Airport::getAirportCode() const {
+    return _airportCode;
+}
+
+string Airport::getAirportName() const {
+    return _airportName;
 }
 
 

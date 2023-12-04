@@ -14,6 +14,7 @@ class Airport {
 
 public:
     Airport();
+
     void setCode(string& code);
     void setName(string& name);
     void setNumLate(int num);
@@ -23,8 +24,9 @@ public:
     void setNumDelayedFlights(int num);
     void setNumFlightsTotaled(int num);
     void setNumMinutesDelayed(int num);
-    string getCode() const;
-    string getName();
+
+    string getAirportCode() const;
+    string getAirportName() const;
     int getNumLate() const;
     int getSecurityDelays() const;
     int getNumWeatherDelays() const;
