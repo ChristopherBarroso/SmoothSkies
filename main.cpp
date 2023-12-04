@@ -123,49 +123,49 @@ int main()
                 QuickSort quick;
                 string late = "Late";
                 quick.callQuickSort(late);
-                // cout << quick.callPrint(late) << endl;
+                quick.callPrint(late);
             }
             else if (numSecDelays)
             {
                 QuickSort quick;
                 string security = "Security";
                 quick.callQuickSort(security);
-                // cout << list of airports sorted by security delays
+                quick.callPrint(security)
             }
             else if (numWeatherDelays)
             {
                 QuickSort quick;
                 string weather = "Weather";
                 quick.callQuickSort(weather);
-                // cout << list of airports sorted by weather delays
+                quick.callPrint(weather);
             }
             else if (numFlightsCancelled)
             {
                 QuickSort quick;
                 string cancelled = "Cancelled";
                 quick.callQuickSort(cancelled);
-                // cout << list of airports sorted by cancelled flights
+                quick.callPrint(cancelled);
             }
             else if (numDelayedFlights)
             {
                 QuickSort quick;
                 string delayed = "Delayed";
                 quick.callQuickSort(delayed);
-                // cout << list of airports sorted by delayed flights
+                quick.callPrint(delayed);
             }
             else if (numFlightsTotaled)
             {
                 QuickSort quick;
                 string total = "Total";
                 quick.callQuickSort(total);
-                // cout << list of airports sorted by total flights
+                quick.callPrint(total);
             }
             else if (numMinutesDelayed)
             {
                 QuickSort quick;
                 string minutes = "Minutes";
                 quick.callQuickSort(minutes);
-                // cout << list of airports sorted by minutes delayed
+                quick.callPrint(minutes);
             }
             else if (exitProgram)
             {
