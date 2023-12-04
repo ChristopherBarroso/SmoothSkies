@@ -1,7 +1,7 @@
 #include "Airport.h"
 
 Airport::Airport(){
-    _airportCode = 0;
+    _airportCode = "";
     _airportName = "";
     _numLateFlights = 0;
     _numSecurityDelays = 0;
@@ -12,7 +12,7 @@ Airport::Airport(){
     _numMinutesDelayed = 0;
 }
 
-void Airport::setCode(int code) {
+void Airport::setCode(string& code) {
     _airportCode = code;
 }
 
