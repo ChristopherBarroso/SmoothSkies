@@ -1,10 +1,10 @@
 #ifndef SMOOTHSKIES_MERGESORT_H
 #define SMOOTHSKIES_MERGESORT_H
 #include "Airport.h"
-
+//this is no longer up to date
 class MergeSort {
     Airport airports[4408]; 
-    Airport temp[]; 
+    Airport temp[4408]; 
 
     void mergesort(Airport temp[], int left, int right); 
     void MergeLateFlights(Airport temp[], int left, int right);
@@ -21,4 +21,4 @@ public:
     void callMergeSort(string& userInput); 
 };
 
-#endif
+#endif  
