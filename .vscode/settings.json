@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 {
     "files.associations": {
         "xstring": "cpp"
     }
 }
+||||||| c53edb2
+=======
+{
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}
+>>>>>>> 7dc5e43d9221b70400e25969e6b11852243a78b6
