@@ -17,7 +17,7 @@ void MergeSort::readInData(){
             istringstream stream(currentLine);
             for (int i = 0; i < 9; i++) {
                 getline(stream, token, ',');
-                if (i == 0) { newAp.setCode(stoi(token)); }
+                if (i == 0) { newAp.setCode(token); }
                 else if (i == 1) { newAp.setName(token);}
                 else if (i == 2) { newAp.setNumLate(stoi(token)); }
                 else if (i == 3) { newAp.setSecurityDelays(stoi(token));}
@@ -38,17 +38,17 @@ void MergeSort::readInData(){
 }
 
 //citation: OpenDSA
-void MergeSort::mergesort(Airport* airports[], Airport* temp[], int left, int right){
+void MergeSort::MergeSecurityDelays(Airport temp[],int left, int right){
     if(left == right){
         return; 
     }
     int mid = (left + right)/2; 
-    mergesort(airports, temp, left, mid);
-    mergesort(airports, temp, (mid+1), right);
+    MergeSecurityDelays(temp, left, mid);
+    MergeSecurityDelays(temp, (mid+1), right);
 
     //copy the subarrray into temp array
     for(int i = left; i <= right; i++){
-        *temp[i] = *airports[i]; 
+        temp[i] = airports[i]; 
     }
 
     int leftPos = left; 
@@ -57,19 +57,301 @@ void MergeSort::mergesort(Airport* airports[], Airport* temp[], int left, int ri
     for(int i = left; i <= right; i++){
         
         if(leftPos = midPos+1){
-            *airports[i] = *temp[midPos++]; 
+            airports[i] = temp[midPos++]; 
 
         }
         else if(midPos > right){
-            *airports[i] = *temp[leftPos++]; 
+            airports[i] = temp[leftPos++]; 
 
         //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
-        }else if(*temp[leftPos]->getName < *temp[midPos]->getName){
+        }else if(temp[leftPos].getSecurityDelays() < temp[midPos].getSecurityDelays()){
 
-            *airports[i] = *temp[leftPos++]; 
+            airports[i] = temp[leftPos++]; 
 
         }else{
-            *airports[i] = *temp[midPos++]; 
+            airports[i] = temp[midPos++]; 
         }
     }
+}
+
+void MergeSort::MergeLateFlights(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeLateFlights(temp, left, mid);
+    MergeLateFlights(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumLate() < temp[midPos].getNumLate()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeWeatherDelays(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeWeatherDelays(temp, left, mid);
+    MergeWeatherDelays(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumWeatherDelays() < temp[midPos].getNumWeatherDelays()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeFlightsCancelled(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeFlightsCancelled(temp, left, mid);
+    MergeFlightsCancelled(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumFlightsCancelled() < temp[midPos].getNumFlightsCancelled()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeWeatherDelays(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeWeatherDelays(temp, left, mid);
+    MergeWeatherDelays(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumWeatherDelays() < temp[midPos].getNumWeatherDelays()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeDelayedFlights(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeDelayedFlights(temp, left, mid);
+    MergeDelayedFlights(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumDelayedFlights() < temp[midPos].getNumDelayedFlights()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeFlightsTotal(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeFlightsTotal(temp, left, mid);
+    MergeFlightsTotal(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumFlightsTotaled() < temp[midPos].getNumFlightsTotaled()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::MergeMinutesDelayed(Airport temp[], int left, int right){
+      if(left == right){
+        return; 
+    }
+    int mid = (left + right)/2; 
+    MergeMinutesDelayed(temp, left, mid);
+    MergeMinutesDelayed(temp, (mid+1), right);
+
+    //copy the subarrray into temp array
+    for(int i = left; i <= right; i++){
+        temp[i] = airports[i]; 
+    }
+
+    int leftPos = left; 
+    int midPos = mid+1; 
+
+    for(int i = left; i <= right; i++){
+        
+        if(leftPos = midPos+1){
+            airports[i] = temp[midPos++]; 
+
+        }
+        else if(midPos > right){
+            airports[i] = temp[leftPos++]; 
+
+        //here is where we access the val in object that we want to compare so do. Ex: *temp[leftPos]->getName
+        }else if(temp[leftPos].getNumMinutesDelayed() < temp[midPos].getNumMinutesDelayed()){
+
+            airports[i] = temp[leftPos++]; 
+
+        }else{
+            airports[i] = temp[midPos++]; 
+        }
+    }
+}
+
+void MergeSort::callMergeSort(string& userInput){
+    int left = 0; 
+    int right = (sizeof(airports) / (sizeof(this->airports[0]))); 
+
+    if(userInput == "Late"){
+        void MergeLateFlights(Airport temp[], int left, int right);
+
+    }else if(userInput == "Security"){
+        void MergeSecurityDelays(Airport temp[], int left, int right);
+
+    }else if(userInput == "Weather"){
+        void MergeWeatherDelays(Airport temp[], int left, int right);
+
+    }else if(userInput == "Cancelled")
+    {
+        void MergeFlightsCancelled(Airport temp[], int left, int right);
+
+    }else if(userInput == "Delayed"){
+       void MergeDelayedFlights(Airport temp[], int left, int right);
+
+    }else if(userInput == "Total")
+    {
+       void MergeFlightsTotal(Airport temp[], int left, int right);
+
+    }else{
+        void MergeMinutesDelayed(Airport temp[], int left, int right);
+        }
+
 }
