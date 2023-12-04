@@ -1,37 +1,18 @@
-//
-// Created by Christopher Barroso on 12/2/23.
-//
-
 #include "Airport.h"
 
 Airport::Airport(){
-    _airportCode = "default";
-    _airportName = "default";
-    _numLateFlights = "default";
-    _numSecurityDelays = "default";
-    _numWeatherDelays = "default";
-    _numFlightsCancelled = "default";
-    _numDelayedFlights = "default";
-    _numFlightsTotaled = "default";
-    _numMinutesDelayed = "default";
+    _airportCode = 0;
+    _airportName = "";
+    _numLateFlights = 0;
+    _numSecurityDelays = 0;
+    _numWeatherDelays = 0;
+    _numFlightsCancelled = 0;
+    _numDelayedFlights = 0;
+    _numFlightsTotaled = 0;
+    _numMinutesDelayed = 0;
 }
-/*
-Airport::Airport(string airportCode, string airportName, string numLateFlights, string numSecurityDelays,
-                 string numWeatherDelays, string numFlightsCancelled, string numDelayedFlights, string numFlightsTotaled,
-                 string numMinutesDelayed){
-    _airportCode = airportCode;
-    _airportName = airportName;
-    _numLateFlights = numLateFlights;
-    _numSecurityDelays = numSecurityDelays;
-    _numWeatherDelays = numWeatherDelays;
-    _numFlightsCancelled = numFlightsCancelled;
-    _numDelayedFlights = numDelayedFlights;
-    _numFlightsTotaled = numFlightsTotaled;
-    _numMinutesDelayed = numMinutesDelayed;
-}
- */
 
-void Airport::setCode(string& code) {
+void Airport::setCode(int code) {
     _airportCode = code;
 }
 
@@ -39,32 +20,68 @@ void Airport::setName(string& name) {
     _airportName = name;
 }
 
-void Airport::setNumLate(string& num) {
+void Airport::setNumLate(int num) {
     _numLateFlights = num;
 }
 
-void Airport::setSecurityDelays(string& num) {
+void Airport::setSecurityDelays(int num) {
     _numSecurityDelays = num;
 }
 
-void Airport::setNumWeatherDelays(string& num) {
+void Airport::setNumWeatherDelays(int num) {
     _numWeatherDelays = num;
 }
 
-void Airport::setNumFlightsCancelled(string& num) {
+void Airport::setNumFlightsCancelled(int num) {
     _numFlightsCancelled = num;
 }
 
-void Airport::setNumDelayedFlights(string& num) {
+void Airport::setNumDelayedFlights(int num) {
     _numDelayedFlights = num;
 }
 
-void Airport::setNumFlightsTotaled(string& num) {
+void Airport::setNumFlightsTotaled(int num) {
     _numFlightsTotaled = num;
 }
 
-void Airport::setNumMinutesDelayed(string& num) {
+void Airport::setNumMinutesDelayed(int num) {
     _numMinutesDelayed = num;
+}
+
+int Airport::getCode() const {
+    return _airportCode;
+}
+
+string Airport::getName() {
+    return _airportName;
+}
+
+int Airport::getNumLate() const {
+    return _numLateFlights;
+}
+
+int Airport::getSecurityDelays() const {
+    return _numSecurityDelays;
+}
+
+int Airport::getNumWeatherDelays() const {
+    return _numWeatherDelays;
+}
+
+int Airport::getNumFlightsCancelled() const {
+    return _numFlightsCancelled;
+}
+
+int Airport::getNumDelayedFlights() const {
+    return _numDelayedFlights;
+}
+
+int Airport::getNumFlightsTotaled() const {
+    return _numFlightsTotaled;
+}
+
+int Airport::getNumMinutesDelayed() const {
+    return _numMinutesDelayed;
 }
 
 

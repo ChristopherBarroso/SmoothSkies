@@ -7,8 +7,8 @@ class QuickSort {
 
     Airport airports[4408];
 
-    void quickSort(Airport array[], int low, int high);
-    int partition(Airport array[], int low, int high);
+    void quickSort(int low, int high);
+    int partition(int low, int high);
 
 
 public:

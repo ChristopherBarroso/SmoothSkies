@@ -8,18 +8,24 @@ int main() {
     cout << "Hello and welcome to Smooth Skies, an interactive program that aims to inform "
             "users on the airports to avoid!" << endl;
 
+    //boolean for program exit
     bool exitProgram = false;
 
+
     while(!exitProgram){
+
+        //allows user to choose different sorting methods
         int sortOption = 0;
         bool quickSort = false;
         bool mergeSort = false;
+
+        //menu
         cout << "Please Select an Option:\n"
                 "1. Quick Sort\n"
                 "2. Merge Sort\n"
-                "3. Reverse Order\n" //probably remove reverse order
-                "4. Exit" << endl;
+                "3. Exit" << endl;
 
+        //Second Menu Depending on user's first choice
         cin >> sortOption;
         switch (sortOption){
             case 1:
@@ -38,6 +44,7 @@ int main() {
                 cout << "Invalid option. Please try again." << endl;
         }
 
+        //reads in data for appropriate method
         if(quickSort){
             QuickSort quick;
             quick.readInData();
@@ -46,6 +53,7 @@ int main() {
 
         }
 
+        //Allows user to sort airports depending on:
         cout << "Which attributes do you want to sort?\n"
                 "1. Number of Late Flights\n"
                 "2. Number of Security Delays\n"
