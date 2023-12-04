@@ -1,7 +1,7 @@
 #include "MergeSort.h"
 
 //MergeSort::MergeSort() = defualt; 
-
+//this is no longer up to date
 void MergeSort::readInData(){
     string token;
     ifstream AirportFile("Proj3_Airlines.csv");
@@ -56,7 +56,7 @@ void MergeSort::MergeSecurityDelays(Airport temp[],int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -92,7 +92,7 @@ void MergeSort::MergeLateFlights(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -128,7 +128,7 @@ void MergeSort::MergeWeatherDelays(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -164,7 +164,7 @@ void MergeSort::MergeFlightsCancelled(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -200,7 +200,7 @@ void MergeSort::MergeWeatherDelays(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -236,7 +236,7 @@ void MergeSort::MergeDelayedFlights(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -272,7 +272,7 @@ void MergeSort::MergeFlightsTotal(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
@@ -308,7 +308,7 @@ void MergeSort::MergeMinutesDelayed(Airport temp[], int left, int right){
 
     for(int i = left; i <= right; i++){
         
-        if(leftPos = midPos+1){
+        if(leftPos == midPos+1){
             airports[i] = temp[midPos++]; 
 
         }
