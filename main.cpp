@@ -130,7 +130,7 @@ int main()
                 QuickSort quick;
                 string security = "Security";
                 quick.callQuickSort(security);
-                quick.callPrint(security)
+                quick.callPrint(security);
             }
             else if (numWeatherDelays)
             {
