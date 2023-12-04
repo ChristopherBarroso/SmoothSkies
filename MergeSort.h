@@ -15,6 +15,13 @@ class MergeSort {
     void MergeFlightsTotal(Airport temp[], int left, int right);
     void MergeMinutesDelayed(Airport temp[], int left, int right);
 
+    void printLateFlights(); 
+    void printSecurityDelays(); 
+    void printWeatherDelays(); 
+    void printFlightsCancelled(); 
+    void printDelayedFlights(); 
+    void printFlightsTotal();
+    void printMinutesDelay();  
 public:
     MergeSort();
     void readInData(); 
