@@ -22,7 +22,7 @@ int main()
         bool mergeSort = false;
 
         // menu
-        cout << "Please Select an Option:\n"
+        cout << "Please Select an Option (Input Number):\n"
                 "1. Quick Sort\n"
                 "2. Merge Sort\n"
                 "3. Exit"
@@ -39,10 +39,6 @@ int main()
             mergeSort = true;
             break;
         case 3:
-            // Reverse order logic
-            //what does this mean???
-            break;
-        case 4:
             exitProgram = true;
             break;
         default:
@@ -75,7 +71,7 @@ int main()
         bool numFlightsTotaled = false;
         bool numMinutesDelayed = false;
         // Allows user to sort airports depending on:
-        cout << "Which attributes do you want to sort?\n"
+        cout << "Which attributes do you want to sort? (Input Number)\n"
                 "1. Number of Late Flights\n"
                 "2. Number of Security Delays\n"
                 "3. Number of Weather Delays\n"
@@ -119,6 +115,7 @@ int main()
         }
 
         // calls quicksort method
+        //add output/cout
         if (quickSort)
         {
             if (numLateFlights)
@@ -126,42 +123,49 @@ int main()
                 QuickSort quick;
                 string late = "Late";
                 quick.callQuickSort(late);
+                // cout << list of airports sorted by late flights
             }
             else if (numSecDelays)
             {
                 QuickSort quick;
                 string security = "Security";
                 quick.callQuickSort(security);
+                // cout << list of airports sorted by security delays
             }
             else if (numWeatherDelays)
             {
                 QuickSort quick;
                 string weather = "Weather";
                 quick.callQuickSort(weather);
+                // cout << list of airports sorted by weather delays
             }
             else if (numFlightsCancelled)
             {
                 QuickSort quick;
                 string cancelled = "Cancelled";
                 quick.callQuickSort(cancelled);
+                // cout << list of airports sorted by cancelled flights
             }
             else if (numDelayedFlights)
             {
                 QuickSort quick;
                 string delayed = "Delayed";
                 quick.callQuickSort(delayed);
+                // cout << list of airports sorted by delayed flights
             }
             else if (numFlightsTotaled)
             {
                 QuickSort quick;
                 string total = "Total";
                 quick.callQuickSort(total);
+                // cout << list of airports sorted by total flights
             }
             else if (numMinutesDelayed)
             {
                 QuickSort quick;
                 string minutes = "Minutes";
                 quick.callQuickSort(minutes);
+                // cout << list of airports sorted by minutes delayed
             }
             else if (exitProgram)
             {
@@ -171,6 +175,7 @@ int main()
         }
 
         // calls mergesort method
+        //add output/cout
         else if (mergeSort)
         {
             // if (numLateFlights)
