@@ -18,7 +18,7 @@ void QuickSort::readInData() {
             istringstream stream(currentLine);
             for (int i = 0; i < 9; i++) {
                 getline(stream, token, ',');
-                if (i == 0) { newAp.setCode(stoi(token)); }
+                if (i == 0) { newAp.setCode(token); }
                 else if (i == 1) { newAp.setName(token);}
                 else if (i == 2) { newAp.setNumLate(stoi(token)); }
                 else if (i == 3) { newAp.setSecurityDelays(stoi(token));}
@@ -47,7 +47,7 @@ void QuickSort::quickSort(int low, int high, string& dataType) {
         else if(dataType == "Weather"){pivot = partitionWeatherDelays(low,high);}
         else if(dataType == "Cancelled"){pivot = partitionFlightsCancelled(low,high);}
         else if(dataType == "Delayed"){pivot = partitionDelayedFlights(low,high);}
-        else if(dataType == "Total"){pivot = partitionFlightstotal(low,high);}
+        else if(dataType == "Total"){pivot = partitionFlightsTotal(low,high);}
         else{pivot = partitionMinutesDelayed(low,high);}
 
         quickSort(low, pivot - 1, dataType);
@@ -166,7 +166,7 @@ int QuickSort::partitionDelayedFlights(int low, int high) {
     return down;
 }
 
-int QuickSort::partitionFlightstotal(int low, int high) {
+int QuickSort::partitionFlightsTotal(int low, int high) {
     int pivot = airports[low].getNumFlightsTotaled(); // change to access different variables
     int up = low, down = high;
 
