@@ -1,5 +1,7 @@
 #include "QuickSort.h"
 
+//Citation: Modified version of quickSort algorithm written by: Amanpreet Kapoor
+
 QuickSort::QuickSort() = default;
 
 //Read in Data from csv
@@ -21,13 +23,13 @@ void QuickSort::readInData() {
             for (int i = 0; i < 9; i++) {
                 getline(stream, token, ',');
                 if (i == 0) { newAp.setCode(token); }
-                else if (i == 1) { newAp.setName(token);}
-                else if (i == 2) { newAp.setNumLate(stoi(token)); }
-                else if (i == 3) { newAp.setSecurityDelays(stoi(token));}
-                else if (i == 4) { newAp.setNumWeatherDelays(stoi(token));}
-                else if (i == 5) { newAp.setNumFlightsCancelled(stoi(token));}
-                else if (i == 6) { newAp.setNumDelayedFlights(stoi(token));}
-                else if (i == 7) { newAp.setNumFlightsTotaled(stoi(token));}
+                else if (i == 1) {newAp.setName(token);}
+                else if (i == 2) {newAp.setNumLate(stoi(token)); }
+                else if (i == 3) {newAp.setSecurityDelays(stoi(token));}
+                else if (i == 4) {newAp.setNumWeatherDelays(stoi(token));}
+                else if (i == 5) {newAp.setNumFlightsCancelled(stoi(token));}
+                else if (i == 6) {newAp.setNumDelayedFlights(stoi(token));}
+                else if (i == 7) {newAp.setNumFlightsTotaled(stoi(token));}
                 else { newAp.setNumMinutesDelayed(stoi(token));}
             }
             airports[index] = newAp;
@@ -226,7 +228,7 @@ void QuickSort::callQuickSort(string& desiredValue) {
     quickSort(0, n-1, desiredValue);
 }
 
-//classifies desired value and prints appropriately 
+//classifies desired value and prints appropriately
 void QuickSort::callPrint(string &dataType) {
     if(dataType == "Late"){
         printLate();
