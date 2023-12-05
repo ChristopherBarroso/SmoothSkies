@@ -376,6 +376,30 @@ void MergeSort:: printMinutesDelay(){
     }
 }
 
+//classifies desired value and prints appropriately 
+void MergeSort::callPrint(string &dataType) {
+    if(dataType == "Late"){
+        printLateFlights();
+    }
+    else if(dataType == "Security"){
+        printSecurityDelays();
+    }
+    else if(dataType == "Weather"){
+        printWeatherDelays();
+    }
+    else if(dataType == "Cancelled"){
+        printFlightsCancelled();
+    }
+    else if(dataType == "Delayed"){
+        printDelayedFlights();
+    }
+    else if(dataType == "Total"){
+        printFlightsTotal();
+    }
+    else{
+        printMinutesDelay();
+    }
+}
 
 void MergeSort::callMergeSort(string& userInput){
     int left = 0; 

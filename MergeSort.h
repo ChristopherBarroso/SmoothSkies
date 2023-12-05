@@ -25,6 +25,7 @@ class MergeSort {
 public:
     MergeSort();
     void readInData(); 
+    void callPrint(string& dataType);
     void callMergeSort(string& userInput); 
 };
 

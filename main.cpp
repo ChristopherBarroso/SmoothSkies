@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "QuickSort.h"
+#include "MergeSort.h"
 
 int main()
 {
@@ -46,15 +47,15 @@ int main()
         }
 
         // reads in data for appropriate method
+        QuickSort quick;
+        MergeSort merge;
         if (quickSort)
         {
-            QuickSort quick;
             quick.readInData();
         }
         else if (mergeSort)
         {
-            // MergeSort merge;
-            // merge.readInData();
+            merge.readInData();
         }
         else if (exitProgram)
         {
@@ -119,49 +120,42 @@ int main()
         {
             if (numLateFlights)
             {
-                QuickSort quick;
                 string late = "Late";
                 quick.callQuickSort(late);
                 quick.callPrint(late);
             }
             else if (numSecDelays)
             {
-                QuickSort quick;
                 string security = "Security";
                 quick.callQuickSort(security);
                 quick.callPrint(security);
             }
             else if (numWeatherDelays)
             {
-                QuickSort quick;
                 string weather = "Weather";
                 quick.callQuickSort(weather);
                 quick.callPrint(weather);
             }
             else if (numFlightsCancelled)
             {
-                QuickSort quick;
                 string cancelled = "Cancelled";
                 quick.callQuickSort(cancelled);
                 quick.callPrint(cancelled);
             }
             else if (numDelayedFlights)
             {
-                QuickSort quick;
                 string delayed = "Delayed";
                 quick.callQuickSort(delayed);
                 quick.callPrint(delayed);
             }
             else if (numFlightsTotaled)
             {
-                QuickSort quick;
                 string total = "Total";
                 quick.callQuickSort(total);
                 quick.callPrint(total);
             }
             else if (numMinutesDelayed)
             {
-                QuickSort quick;
                 string minutes = "Minutes";
                 quick.callQuickSort(minutes);
                 quick.callPrint(minutes);
@@ -174,56 +168,55 @@ int main()
         }
 
         // calls mergesort method
-        // add output/cout
         else if (mergeSort)
         {
-            // if (numLateFlights)
-            // {
-            //     MergeSort merge;
-            //     string late = "Late";
-            //     merge.callMergeSort(late);
-            // }
-            // else if (numSecDelays)
-            // {
-            //     MergeSort merge;
-            //     string security = "Security";
-            //     merge.callMergeSort(security);
-            // }
-            // else if (numWeatherDelays)
-            // {
-            //     MergeSort merge;
-            //     string weather = "Weather";
-            //     merge.callMergeSort(weather);
-            // }
-            // else if (numFlightsCancelled)
-            // {
-            //     MergeSort merge;
-            //     string cancelled = "Cancelled";
-            //     merge.callMergeSort(cancelled);
-            // }
-            // else if (numDelayedFlights)
-            // {
-            //     MergeSort merge;
-            //     string delayed = "Delayed";
-            //     merge.callMergeSort(delayed);
-            // }
-            // else if (numFlightsTotaled)
-            // {
-            //     MergeSort merge;
-            //     string total = "Total";
-            //     merge.callMergeSort(total);
-            // }
-            // else if (numMinutesDelayed)
-            // {
-            //     MergeSort merge;
-            //     string minutes = "Minutes";
-            //     merge.callMergeSort(minutes);
-            // }
-            // else if (exitProgram)
-            // {
-            //     cout << "Thank you for using Smooth Skies!" << endl;
-            //     break;
-            // }
+            if (numLateFlights)
+            {
+                string late = "Late";
+                merge.callMergeSort(late);
+                merge.callPrint(late);
+            }
+            else if (numSecDelays)
+            {
+                string security = "Security";
+                merge.callMergeSort(security);
+                merge.callPrint(security);
+            }
+            else if (numWeatherDelays)
+            {
+                string weather = "Weather";
+                merge.callMergeSort(weather);
+                merge.callPrint(weather);
+            }
+            else if (numFlightsCancelled)
+            {
+                string cancelled = "Cancelled";
+                merge.callMergeSort(cancelled);
+                merge.callPrint(cancelled);
+            }
+            else if (numDelayedFlights)
+            {
+                string delayed = "Delayed";
+                merge.callMergeSort(delayed);
+                merge.callPrint(delayed);
+            }
+            else if (numFlightsTotaled)
+            {
+                string total = "Total";
+                merge.callMergeSort(total);
+                merge.callPrint(total);
+            }
+            else if (numMinutesDelayed)
+            {
+                string minutes = "Minutes";
+                merge.callMergeSort(minutes);
+                merge.callPrint(minutes);
+            }
+            else if (exitProgram)
+            {
+                cout << "Thank you for using Smooth Skies!" << endl;
+                break;
+            }
         }
     }
     return 0;
