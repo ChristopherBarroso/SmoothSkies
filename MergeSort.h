@@ -1,7 +1,7 @@
 #ifndef SMOOTHSKIES_MERGESORT_H
 #define SMOOTHSKIES_MERGESORT_H
 #include "Airport.h"
-//this is no longer up to date
+//add stuff so i can push 
 class MergeSort {
     Airport airports[4408]; 
     Airport temp[4408]; 
@@ -15,6 +15,13 @@ class MergeSort {
     void MergeFlightsTotal(Airport temp[], int left, int right);
     void MergeMinutesDelayed(Airport temp[], int left, int right);
 
+    void printLateFlights(); 
+    void printSecurityDelays(); 
+    void printWeatherDelays(); 
+    void printFlightsCancelled(); 
+    void printDelayedFlights(); 
+    void printFlightsTotal();
+    void printMinutesDelay();  
 public:
     MergeSort();
     void readInData(); 
