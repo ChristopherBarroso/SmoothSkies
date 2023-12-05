@@ -7,7 +7,7 @@ int main()
 
     // Start menu
     cout << "Hello and welcome to Smooth Skies, an interactive program that aims to inform "
-            "users on the airports to avoid!"
+            "users on the airports to avoid! This program will output the airports in order of least to greatest delays."
          << endl;
 
     // boolean for program exit
@@ -115,7 +115,6 @@ int main()
         }
 
         // calls quicksort method
-        //add output/cout
         if (quickSort)
         {
             if (numLateFlights)
@@ -175,7 +174,7 @@ int main()
         }
 
         // calls mergesort method
-        //add output/cout
+        // add output/cout
         else if (mergeSort)
         {
             // if (numLateFlights)
