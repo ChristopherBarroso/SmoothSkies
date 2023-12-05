@@ -1,7 +1,7 @@
 #include "MergeSort.h"
 
 //MergeSort::MergeSort() = defualt; 
-//this is no longer up to date
+//add stuff so i can push 
 void MergeSort::readInData(){
     string token;
     ifstream AirportFile("Proj3_Airlines.csv");
@@ -326,32 +326,90 @@ void MergeSort::MergeMinutesDelayed(Airport temp[], int left, int right){
     }
 }
 
+//print functions 
+void MergeSort::printLateFlights(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Late Flights: " << airports[i].getNumLate() << endl;
+    }
+}
+
+void MergeSort::printSecurityDelays(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getSecurityDelays() << endl;
+    }
+}
+
+void MergeSort:: printWeatherDelays(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getNumWeatherDelays() << endl;
+    }
+}
+
+void MergeSort:: printFlightsCancelled(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getNumFlightsCancelled() << endl;
+    }
+}
+
+void MergeSort:: printDelayedFlights(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getNumDelayedFlights() << endl;
+    }
+}
+
+void MergeSort:: printFlightsTotal(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getNumFlightsTotaled() << endl;
+    }
+}
+
+void MergeSort:: printMinutesDelay(){
+    for(int i = 0; i < (sizeof(airports) / (sizeof(this->airports[0]))); i++){
+        cout << (i+0) << "Airport Code and Name: " << airports[i].getAirportCode() << " " << airports[i].getAirportName() << endl; 
+        cout << "Number of Security Delays: " << airports[i].getNumMinutesDelayed() << endl;
+    }
+}
+
+
 void MergeSort::callMergeSort(string& userInput){
     int left = 0; 
     int right = (sizeof(airports) / (sizeof(this->airports[0]))); 
 
     if(userInput == "Late"){
         void MergeLateFlights(Airport temp[], int left, int right);
+        printLateFlights(); 
 
     }else if(userInput == "Security"){
         void MergeSecurityDelays(Airport temp[], int left, int right);
+        printSecurityDelays();
 
     }else if(userInput == "Weather"){
         void MergeWeatherDelays(Airport temp[], int left, int right);
+        printWeatherDelays(); 
 
     }else if(userInput == "Cancelled")
     {
         void MergeFlightsCancelled(Airport temp[], int left, int right);
+        printFlightsCancelled(); 
 
     }else if(userInput == "Delayed"){
        void MergeDelayedFlights(Airport temp[], int left, int right);
+       printDelayedFlights(); 
 
     }else if(userInput == "Total")
     {
        void MergeFlightsTotal(Airport temp[], int left, int right);
+       printFlightsTotal();
 
     }else{
         void MergeMinutesDelayed(Airport temp[], int left, int right);
-        }
+        printMinutesDelay(); 
+    }
 
 }
